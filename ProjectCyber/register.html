@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create account · SecureGate</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- ===================== LEFT: brand / awareness panel ===================== -->
+  <section class="panel-brand">
+    <div class="hex-grid"></div>
+    <div class="scan-line"></div>
+
+    <div class="brand-mark">
+      <span class="glyph">&#9737;</span>
+      SecureGate
+    </div>
+
+    <div class="panel-copy">
+      <div class="panel-eyebrow">Account creation · encrypted</div>
+      <h1>Every credential matters.</h1>
+      <p>One weak password is all it takes. SecureGate hashes and verifies every account against this platform's awareness standards before it's ever stored &mdash; so your details start protected, and stay that way.</p>
+    </div>
+
+    <div class="tip-rail">
+      <div class="tip-rail-label">Awareness tip</div>
+      <div class="tip-card">
+        <span class="tip-icon">[i]</span>
+        <p id="tipText">A strong password mixes upper and lower case, numbers, and symbols &mdash; and is never reused across sites.</p>
+      </div>
+      <div class="tip-dots" id="tipDots"></div>
+    </div>
+  </section>
+
+  <!-- ===================== RIGHT: register form ===================== -->
+  <section class="panel-form">
+    <div class="form-card">
+
+      <div class="form-card-head">
+        <h2>Create your account</h2>
+        <p>Already registered? <a href="login.html">Sign in</a></p>
+      </div>
+
+      <div class="banner" id="formBanner"></div>
+
+      <form id="registerForm" novalidate autocomplete="off">
+
+        <div class="field">
+          <label for="fullName">Full name</label>
+          <div class="input-wrap">
+            <input type="text" id="fullName" name="fullName" placeholder="Jane Cooper" autocomplete="name">
+          </div>
+          <div class="field-msg" id="fullNameMsg"></div>
+        </div>
+
+        <div class="field">
+          <label for="email">Email address</label>
+          <div class="input-wrap">
+            <input type="text" id="email" name="email" placeholder="jane@company.com" autocomplete="email">
+          </div>
+          <div class="field-msg" id="emailMsg"></div>
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone number</label>
+          <div class="input-wrap">
+            <input type="text" id="phone" name="phone" placeholder="+91 98765 43210" autocomplete="tel">
+          </div>
+          <div class="field-msg" id="phoneMsg"></div>
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <div class="input-wrap">
+            <input type="password" id="password" name="password" placeholder="Create a strong password" autocomplete="new-password">
+            <button type="button" class="toggle-visibility" data-target="password">SHOW</button>
+          </div>
+
+          <div class="clearance">
+            <div class="clearance-top">
+              <span class="clearance-label">Security clearance</span>
+              <span class="clearance-level" id="clearanceLevel">NONE</span>
+            </div>
+            <div class="clearance-bars">
+              <i id="bar1"></i><i id="bar2"></i><i id="bar3"></i><i id="bar4"></i>
+            </div>
+            <div class="hash-preview"><span class="tag">hash&gt;</span> <span id="hashPreview">waiting for input&hellip;</span></div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="confirmPassword">Confirm password</label>
+          <div class="input-wrap">
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter your password" autocomplete="new-password">
+            <button type="button" class="toggle-visibility" data-target="confirmPassword">SHOW</button>
+          </div>
+          <div class="field-msg" id="confirmPasswordMsg"></div>
+        </div>
+
+        <div class="field-check">
+          <input type="checkbox" id="terms" name="terms">
+          <label for="terms">I agree to receive security awareness updates and confirm the details above are mine.</label>
+        </div>
+
+        <button type="submit" class="btn-primary" id="submitBtn">
+          <span class="spinner"></span>
+          <span class="btn-label">Create account</span>
+        </button>
+      </form>
+
+      <p class="foot-note">Passwords are hashed with bcrypt before storage &mdash; SecureGate never stores plain text.</p>
+    </div>
+  </section>
+
+</div>
+
+<script src="assets/js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wi-Fi Safety — CyberShield</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="matrix-canvas"></canvas>
+  <nav>
+    <a href="index.html" class="nav-logo"><span class="bracket">[</span>CYBER<span style="color:var(--glow)">SHIELD</span><span class="bracket">]</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="phishing.html">PHISHING</a></li>
+      <li><a href="password.html">PASSWORD</a></li>
+      <li><a href="quiz.html">QUIZ</a></li>
+      <li><a href="wifi.html" class="active">WI-FI</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="section-header">
+      <p class="label">// module 04</p>
+      <h2>WI-FI <span class="hl">SAFETY GUIDE</span></h2>
+      <p>Public Wi-Fi is a goldmine for attackers. Learn what's at risk, how attacks work, and how to stay protected.</p>
+    </div>
+
+    <!-- Network types -->
+    <div class="wifi-grid">
+      <div class="wifi-card danger" data-risk="HIGH RISK">
+        <div class="wifi-icon">☕</div>
+        <h3>Open Public Wi-Fi</h3>
+        <p>Coffee shops, airports, hotels — no password required means no encryption. Anyone on the same network can potentially intercept your traffic.</p>
+      </div>
+      <div class="wifi-card danger" data-risk="HIGH RISK">
+        <div class="wifi-icon">😈</div>
+        <h3>Evil Twin Networks</h3>
+        <p>Attackers set up a fake hotspot named "Airport_Free_WiFi" near a real one. Your device connects automatically, sending all traffic through the attacker.</p>
+      </div>
+      <div class="wifi-card warning" data-risk="MEDIUM">
+        <div class="wifi-icon">🏨</div>
+        <h3>Shared Password Networks</h3>
+        <p>Hotel or gym Wi-Fi with a shared password is slightly better — but all users share the same network. Advanced users can still sniff traffic.</p>
+      </div>
+      <div class="wifi-card safe" data-risk="SAFE">
+        <div class="wifi-icon">🏠</div>
+        <h3>Private Home Network</h3>
+        <p>WPA3/WPA2 encryption with a strong unique password. You control who is on the network. Still, keep firmware updated and change default router passwords.</p>
+      </div>
+      <div class="wifi-card safe" data-risk="SAFEST">
+        <div class="wifi-icon">📱</div>
+        <h3>Mobile Data (4G/5G)</h3>
+        <p>Your carrier's encrypted cellular network is far more secure than public Wi-Fi. Use it for sensitive tasks when you don't have trusted Wi-Fi access.</p>
+      </div>
+      <div class="wifi-card safe" data-risk="SECURE">
+        <div class="wifi-icon">🛡️</div>
+        <h3>VPN on Any Network</h3>
+        <p>A VPN encrypts all your traffic before it leaves your device, making public Wi-Fi attacks useless. Recommended for any non-home network.</p>
+      </div>
+    </div>
+
+    <!-- VPN Simulator -->
+    <div class="section-header">
+      <p class="label">// interactive demo</p>
+      <h2>VPN <span class="hl">VISUALISER</span></h2>
+      <p>Toggle the VPN to see how it affects your data in transit on a public network.</p>
+    </div>
+
+    <div class="vpn-demo">
+      <div class="vpn-toggle-row">
+        <div class="vpn-toggle-wrap">
+          <div class="toggle-switch" id="vpn-toggle">
+            <div class="toggle-knob"></div>
+          </div>
+          <span class="toggle-label" id="toggle-label">VPN: OFF</span>
+        </div>
+        <span class="vpn-status off" id="vpn-status">● UNPROTECTED</span>
+      </div>
+
+      <div class="packet-vis" id="packet-vis">
+        <div class="packet-node">
+          <span class="node-icon">💻</span>
+          <span class="node-label">YOUR DEVICE</span>
+        </div>
+        <div class="packet-line" id="packet-line">
+          <div class="packet-dot plain" id="packet-dot"></div>
+          <span class="packet-label plain" id="packet-label">PLAINTEXT DATA</span>
+        </div>
+        <div class="packet-node">
+          <span class="node-icon">🌐</span>
+          <span class="node-label">INTERNET</span>
+        </div>
+      </div>
+
+      <div class="terminal" style="margin-top:1.5rem;">
+        <div class="terminal-bar">
+          <div class="terminal-dot r"></div><div class="terminal-dot y"></div><div class="terminal-dot g"></div>
+          <span class="terminal-title">network_monitor.sh</span>
+        </div>
+        <div class="terminal-body" id="vpn-log">
+<span style="color:var(--accent)">⚠</span>  VPN: DISABLED<br>
+<span style="color:var(--accent)">⚠</span>  Traffic: UNENCRYPTED<br>
+<span style="color:var(--accent)">⚠</span>  Risk: Attacker on same network CAN intercept data<br>
+<span style="color:var(--accent)">⚠</span>  Visible to network: Websites visited, login credentials, form data<br>
+<span style="color:var(--text-dim)">_</span><span class="cursor"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Safety Tips -->
+    <section class="mt-3">
+      <div class="section-header">
+        <p class="label">// protection checklist</p>
+        <h2>STAY SAFE <span class="hl">ON ANY NETWORK</span></h2>
+      </div>
+      <ul class="tips-list">
+        <li><span class="tip-num">01</span><div><strong>Use a reputable VPN</strong>Consider Mullvad, ProtonVPN, or ExpressVPN for public networks. Free VPNs often sell your data. Your VPN provider sees your traffic, so choose one with a no-logs policy.</div></li>
+        <li><span class="tip-num">02</span><div><strong>Verify the network name before connecting</strong>Always ask staff for the exact Wi-Fi name. "CoffeShop_WiFi" next to "CoffeeShop_WiFi" could be an evil twin. Subtle typos are a giveaway.</div></li>
+        <li><span class="tip-num">03</span><div><strong>Use HTTPS everywhere</strong>Look for the padlock icon. Modern browsers warn you about HTTP sites. The HTTPS extension or browser settings can force secure connections. Never log in on HTTP sites.</div></li>
+        <li><span class="tip-num">04</span><div><strong>Disable auto-connect to known networks</strong>Your device can auto-join any network matching a saved name. An attacker naming their hotspot "Home" or "Starbucks" can trick your device into connecting. Turn off auto-join for public networks.</div></li>
+        <li><span class="tip-num">05</span><div><strong>Turn off Wi-Fi when not in use</strong>Your device broadcasts saved network names when Wi-Fi is on, even when not connected. This enables passive tracking and probing attacks. Enable Wi-Fi only when needed.</div></li>
+        <li><span class="tip-num">06</span><div><strong>Avoid sensitive activities on public Wi-Fi</strong>If you don't have a VPN, avoid online banking, email login, or shopping. Save these for your mobile data or trusted home network. No deal is worth a compromised bank account.</div></li>
+        <li><span class="tip-num">07</span><div><strong>Keep your device firewall enabled</strong>Your OS firewall blocks incoming connection attempts. On public networks, also enable "Public Network" mode which restricts network discovery and sharing — this prevents other devices from seeing yours.</div></li>
+        <li><span class="tip-num">08</span><div><strong>Check for HSTS and certificate warnings</strong>If your browser shows a certificate error, do not bypass it. This can indicate a man-in-the-middle attack intercepting your connection. Treat any unexpected security warning as a red flag.</div></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer><span>[CYBERSHIELD]</span> — WI-FI SAFETY MODULE</footer>
+
+  <script src="wifi.js"></script>
+  <script>
+    const canvas = document.getElementById('matrix-canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+    window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%^&*<>/\\|[]{}';
+    const cols = Math.floor(canvas.width / 16);
+    const drops = Array(cols).fill(1);
+    function drawMatrix() {
+      ctx.fillStyle = 'rgba(2,12,7,0.04)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = '#00ff41';
+      ctx.font = '14px Share Tech Mono';
+      drops.forEach((y, i) => {
+        const ch = chars[Math.floor(Math.random() * chars.length)];
+        ctx.fillText(ch, i * 16, y * 16);
+        if (y * 16 > canvas.height && Math.random() > 0.975) drops[i] = 0;
+        drops[i]++;
+      });
+    }
+    setInterval(drawMatrix, 50);
+  </script>
+</body>
+</html>

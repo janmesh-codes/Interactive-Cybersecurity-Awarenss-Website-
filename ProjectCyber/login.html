@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign in · SecureGate</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- ===================== LEFT: brand / awareness panel ===================== -->
+  <section class="panel-brand">
+    <div class="hex-grid"></div>
+    <div class="scan-line"></div>
+
+    <div class="brand-mark">
+      <span class="glyph">&#9737;</span>
+      SecureGate
+    </div>
+
+    <div class="panel-copy">
+      <div class="panel-eyebrow">Identity verification</div>
+      <h1>Welcome back. Let's confirm it's you.</h1>
+      <p>Every sign-in is checked against your hashed credentials and logged for your protection. If something looks wrong, you'll be the first to know.</p>
+    </div>
+
+    <div class="tip-rail">
+      <div class="tip-rail-label">Awareness tip</div>
+      <div class="tip-card">
+        <span class="tip-icon">[i]</span>
+        <p id="tipText">Never enter your password after clicking a link from an unexpected email &mdash; type the address in yourself instead.</p>
+      </div>
+      <div class="tip-dots" id="tipDots"></div>
+    </div>
+  </section>
+
+  <!-- ===================== RIGHT: login form ===================== -->
+  <section class="panel-form">
+    <div class="form-card">
+
+      <div class="form-card-head">
+        <h2>Sign in to your account</h2>
+        <p>New to SecureGate? <a href="register.html">Create an account</a></p>
+      </div>
+
+      <div class="banner" id="formBanner"></div>
+
+      <form id="loginForm" novalidate autocomplete="off">
+
+        <div class="field">
+          <label for="email">Email address</label>
+          <div class="input-wrap">
+            <input type="text" id="email" name="email" placeholder="jane@company.com" autocomplete="email">
+          </div>
+          <div class="field-msg" id="emailMsg"></div>
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <div class="input-wrap">
+            <input type="password" id="password" name="password" placeholder="Enter your password" autocomplete="current-password">
+            <button type="button" class="toggle-visibility" data-target="password">SHOW</button>
+          </div>
+          <div class="field-msg" id="passwordMsg"></div>
+        </div>
+
+        <div class="field-check">
+          <input type="checkbox" id="remember" name="remember">
+          <label for="remember">Keep me signed in on this device</label>
+        </div>
+
+        <button type="submit" class="btn-primary" id="submitBtn">
+          <span class="spinner"></span>
+          <span class="btn-label">Sign in</span>
+        </button>
+      </form>
+
+      <p class="foot-note">Failed attempts are rate-limited and logged for account safety.</p>
+    </div>
+  </section>
+
+</div>
+
+<!-- access verification overlay -->
+<div class="scan-overlay" id="scanOverlay">
+  <div class="scan-box">
+    <div class="sweep"></div>
+    <div class="scan-status" id="scanStatus">
+      <div class="line" data-step="0"><span class="mark">&gt;</span> Checking credentials&hellip;</div>
+      <div class="line" data-step="1"><span class="mark">&gt;</span> Verifying password hash&hellip;</div>
+      <div class="line" data-step="2"><span class="mark">&gt;</span> Establishing session&hellip;</div>
+      <div class="line" data-step="3"><span class="mark">&gt;</span> Access granted.</div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scam Quiz — CyberShield</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="matrix-canvas"></canvas>
+  <nav>
+    <a href="index.html" class="nav-logo"><span class="bracket">[</span>CYBER<span style="color:var(--glow)">SHIELD</span><span class="bracket">]</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="phishing.html">PHISHING</a></li>
+      <li><a href="password.html">PASSWORD</a></li>
+      <li><a href="quiz.html" class="active">QUIZ</a></li>
+      <li><a href="wifi.html">WI-FI</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="section-header">
+      <p class="label">// module 03</p>
+      <h2>CYBER SCAM <span class="hl">QUIZ</span></h2>
+      <p>10 questions covering real-world scams, social engineering, and security best practices. Test your cyber awareness.</p>
+    </div>
+
+    <div id="quiz-container"></div>
+  </main>
+
+  <footer><span>[CYBERSHIELD]</span> — SCAM QUIZ MODULE</footer>
+
+  <script src="quiz.js"></script>
+  <script>
+    const canvas = document.getElementById('matrix-canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+    window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%^&*<>/\\|[]{}';
+    const cols = Math.floor(canvas.width / 16);
+    const drops = Array(cols).fill(1);
+    function drawMatrix() {
+      ctx.fillStyle = 'rgba(2,12,7,0.04)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = '#00ff41';
+      ctx.font = '14px Share Tech Mono';
+      drops.forEach((y, i) => {
+        const ch = chars[Math.floor(Math.random() * chars.length)];
+        ctx.fillText(ch, i * 16, y * 16);
+        if (y * 16 > canvas.height && Math.random() > 0.975) drops[i] = 0;
+        drops[i]++;
+      });
+    }
+    setInterval(drawMatrix, 50);
+  </script>
+</body>
+</html>

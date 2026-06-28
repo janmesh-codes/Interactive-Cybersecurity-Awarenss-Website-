@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberShield — Cyber Awareness</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="matrix-canvas"></canvas>
+
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <span class="bracket">[</span>CYBER<span style="color:var(--glow)">SHIELD</span><span class="bracket">]</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">HOME</a></li>
+      <li><a href="phishing.html">PHISHING</a></li>
+      <li><a href="password.html">PASSWORD</a></li>
+      <li><a href="quiz.html">QUIZ</a></li>
+      <li><a href="wifi.html">WI-FI</a></li>
+      <li><a href="register.html">REGISTER</a></li>
+      <li><a href="login.html">LOGIN</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <p class="hero-eyebrow">// DIGITAL SECURITY TRAINING //</p>
+      <h1>STAY<br><span class="highlight">CYBER SAFE</span><br>STAY AHEAD</h1>
+      <p class="hero-sub">Learn to identify threats, protect your identity, and navigate the digital world with confidence. Interactive simulations. Real scenarios.</p>
+      <div class="hero-cta">
+        <a href="phishing.html" class="btn btn-primary">▶ START TRAINING</a>
+        <a href="quiz.html" class="btn btn-outline">TEST YOURSELF</a>
+      </div>
+    </section>
+
+    <div class="terminal mt-3">
+      <div class="terminal-bar">
+        <div class="terminal-dot r"></div>
+        <div class="terminal-dot y"></div>
+        <div class="terminal-dot g"></div>
+        <span class="terminal-title">threat_stats.sh — live</span>
+      </div>
+      <div class="terminal-body">
+        <span style="color:var(--text-dim)">$</span> <span style="color:var(--glow)">run</span> threat_report --year=2024<br>
+        <span style="color:var(--text-dim)">...</span><br>
+        <span style="color:var(--accent)">⚠</span>  Phishing attacks account for <span style="color:var(--accent)">36%</span> of data breaches<br>
+        <span style="color:var(--accent)">⚠</span>  <span style="color:var(--accent)">81%</span> of breaches involve weak/stolen passwords<br>
+        <span style="color:var(--accent2)">◈</span>  Public Wi-Fi used in <span style="color:var(--accent2)">22%</span> of credential theft cases<br>
+        <span style="color:var(--glow)">✔</span>  Security training reduces risk by <span style="color:var(--glow)">70%</span><br>
+        <span style="color:var(--text-dim)">_</span><span class="cursor"></span>
+      </div>
+    </div>
+
+    <div class="cards-grid mt-3">
+      <a href="phishing.html" class="card">
+        <span class="card-icon">🎣</span>
+        <h3>Phishing Simulator</h3>
+        <p>Analyse realistic emails. Spot the red flags before you click. Train your instincts.</p>
+      </a>
+      <a href="password.html" class="card">
+        <span class="card-icon">🔐</span>
+        <h3>Password Checker</h3>
+        <p>Real-time strength analysis. See how long it would take attackers to crack your password.</p>
+      </a>
+      <a href="quiz.html" class="card">
+        <span class="card-icon">🧠</span>
+        <h3>Scam Quiz</h3>
+        <p>10 questions. Real-world scam scenarios. Sharpen your threat detection skills.</p>
+      </a>
+      <a href="wifi.html" class="card">
+        <span class="card-icon">📡</span>
+        <h3>Wi-Fi Safety</h3>
+        <p>Understand public Wi-Fi risks and learn how to protect your data on any network.</p>
+      </a>
+    </div>
+
+    <section class="mt-3">
+      <div class="section-header">
+        <p class="label">// why it matters</p>
+        <h2>THE COST OF <span class="hl">IGNORANCE</span></h2>
+        <p>Every 39 seconds there is a cyber attack somewhere on the internet. Most succeed because of human error — not technical failure.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;">
+        <div class="terminal">
+          <div class="terminal-body" style="text-align:center;padding:1.75rem 1rem;">
+            <div style="font-family:var(--font-display);font-size:2.2rem;font-weight:900;color:var(--accent);text-shadow:0 0 20px var(--accent);margin-bottom:0.4rem;">$4.9M</div>
+            <div style="font-family:var(--font-mono);font-size:0.75rem;color:var(--text-dim);">Average data breach cost in 2024</div>
+          </div>
+        </div>
+        <div class="terminal">
+          <div class="terminal-body" style="text-align:center;padding:1.75rem 1rem;">
+            <div style="font-family:var(--font-display);font-size:2.2rem;font-weight:900;color:var(--accent2);text-shadow:0 0 20px var(--accent2);margin-bottom:0.4rem;">3.4B</div>
+            <div style="font-family:var(--font-mono);font-size:0.75rem;color:var(--text-dim);">Phishing emails sent every day</div>
+          </div>
+        </div>
+        <div class="terminal">
+          <div class="terminal-body" style="text-align:center;padding:1.75rem 1rem;">
+            <div style="font-family:var(--font-display);font-size:2.2rem;font-weight:900;color:var(--glow);text-shadow:0 0 20px var(--glow);margin-bottom:0.4rem;">97%</div>
+            <div style="font-family:var(--font-mono);font-size:0.75rem;color:var(--text-dim);">People can't identify phishing emails</div>
+          </div>
+        </div>
+        <div class="terminal">
+          <div class="terminal-body" style="text-align:center;padding:1.75rem 1rem;">
+            <div style="font-family:var(--font-display);font-size:2.2rem;font-weight:900;color:var(--accent3);text-shadow:0 0 20px var(--accent3);margin-bottom:0.4rem;">207</div>
+            <div style="font-family:var(--font-mono);font-size:0.75rem;color:var(--text-dim);">Days avg. to detect a breach</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>[CYBERSHIELD]</span> — EDUCATIONAL CYBER AWARENESS PLATFORM &nbsp;|&nbsp; STAY VIGILANT
+  </footer>
+
+  <script>
+    // Matrix rain
+    const canvas = document.getElementById('matrix-canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%^&*<>/\\|[]{}';
+    const cols = Math.floor(canvas.width / 16);
+    const drops = Array(cols).fill(1);
+    function drawMatrix() {
+      ctx.fillStyle = 'rgba(2,12,7,0.04)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = '#00ff41';
+      ctx.font = '14px Share Tech Mono';
+      drops.forEach((y, i) => {
+        const ch = chars[Math.floor(Math.random() * chars.length)];
+        ctx.fillText(ch, i * 16, y * 16);
+        if (y * 16 > canvas.height && Math.random() > 0.975) drops[i] = 0;
+        drops[i]++;
+      });
+    }
+    setInterval(drawMatrix, 50);
+  </script>
+</body>
+</html>
